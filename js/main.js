@@ -14,16 +14,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme toggling functionality
     const themeToggle = document.querySelector('.theme-toggle');
     const body = document.body;
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     
-    // Set initial theme based on user's system preference
-    if (prefersDarkScheme.matches) {
-        body.setAttribute('data-theme', 'dark');
-    }
-
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    
+    // Update theme toggle icon
+    const updateThemeIcon = () => {
+        const icon = themeToggle.querySelector('i');
+        if (body.getAttribute('data-theme') === 'dark') {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    };
+    
+    // Set initial icon
+    updateThemeIcon();
+    
+    // Handle theme toggle click
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        body.classList.toggle('dark-mode');
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon();
     });
 
     // Smooth scrolling for navigation links
