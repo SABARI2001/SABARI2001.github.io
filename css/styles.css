@@ -422,6 +422,8 @@ input, textarea {
     position: relative;
     z-index: 2;
     margin-top: 2rem;
+    opacity: 1 !important;
+    transition: transform 0.3s ease-in-out;
 }
 
 .about-text {
@@ -507,6 +509,10 @@ input, textarea {
     transform: scale(1.05) rotate(2deg);
     opacity: 0.8;
     border-color: #6c63ff;
+}
+
+.about-image:hover {
+    transform: translateY(-10px);
 }
 
 .about-text p {
@@ -603,4 +609,54 @@ input, textarea {
     .about-details {
         grid-template-columns: 1fr;
     }
+}
+
+/* Section Fade Effects */
+section {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    position: relative;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+section.fade-out {
+    opacity: 0.15;
+}
+
+/* Ensure About section image stays prominent */
+.about.visible .about-image {
+    opacity: 1 !important;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.about.fade-out .about-image {
+    opacity: 0.8 !important;
+}
+
+/* Smooth section transitions */
+.section-title {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+section.visible .section-title {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+section.fade-out .section-title {
+    transform: translateY(20px);
+    opacity: 0.15;
+}
+
+/* Initial state for sections */
+section:not(.visible) {
+    pointer-events: none;
+}
+
+section.visible {
+    pointer-events: all;
 } 
