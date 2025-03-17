@@ -24,21 +24,84 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(108, 99, 255, 0.1));
         }
         .thank-you-content {
             max-width: 600px;
             background-color: var(--card-bg);
             padding: 3rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .thank-you-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), #6c63ff);
         }
         .thank-you-icon {
-            font-size: 4rem;
+            font-size: 5rem;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        .thank-you-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .thank-you-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .confirmation-details {
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        .confirmation-details p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .confirmation-details i {
+            color: var(--primary-color);
         }
         .back-home {
             margin-top: 2rem;
+        }
+        .back-home .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .back-home .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -48,8 +111,15 @@
             <i class="fas fa-check-circle thank-you-icon"></i>
             <h1>Thank You!</h1>
             <p>Your message has been sent successfully. I'll get back to you as soon as possible.</p>
+            
+            <div class="confirmation-details">
+                <p><i class="fas fa-envelope"></i> Your email has been delivered to my inbox.</p>
+                <p><i class="fas fa-clock"></i> I typically respond within 24-48 hours.</p>
+                <p><i class="fas fa-info-circle"></i> Please check your inbox for a confirmation email.</p>
+            </div>
+            
             <div class="back-home">
-                <a href="index.html" class="btn primary-btn">Back to Portfolio</a>
+                <a href="index.html" class="btn primary-btn"><i class="fas fa-home"></i> Back to Portfolio</a>
             </div>
         </div>
     </div>
