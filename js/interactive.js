@@ -3,26 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const options = {
         root: null,
-        rootMargin: '-10% 0px',
-        threshold: [0.3, 0.7] // Multiple thresholds for smoother transitions
+        rootMargin: '0px',
+        threshold: 0.4 // Simplified threshold
     };
+
+    // Make all sections visible by default
+    sections.forEach(section => {
+        section.style.opacity = '1';
+    });
 
     // Combined section observer for both fade effects and visibility
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            if (entry.isIntersecting) {
                 // Add visible class with a slight delay for smooth transition
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                    // Fade out other sections
-                    sections.forEach(section => {
-                        if (section !== entry.target) {
-                            section.classList.add('fade-out');
-                        } else {
-                            section.classList.remove('fade-out');
-                        }
-                    });
-                }, 100);
+                entry.target.classList.add('visible');
+                entry.target.classList.remove('fade-out');
+                
+                // Apply subtle fade to other sections
+                sections.forEach(section => {
+                    if (section !== entry.target && !isElementInViewport(section)) {
+                        section.classList.add('fade-out');
+                    }
+                });
 
                 // Handle special effects for About section
                 if (entry.target.id === 'about') {
@@ -40,30 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, options);
 
-    // Set initial state for first visible section
-    const setInitialState = () => {
-        const firstVisible = Array.from(sections).find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        });
-        
-        if (firstVisible) {
-            firstVisible.classList.add('visible');
-            sections.forEach(section => {
-                if (section !== firstVisible) {
-                    section.classList.add('fade-out');
-                }
-            });
-        }
-    };
+    // Helper function to check if element is in viewport
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
     // Observe all sections
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
-    // Set initial state after a short delay
-    setTimeout(setInitialState, 100);
 
     console.log('All interactive elements initialized');
 });

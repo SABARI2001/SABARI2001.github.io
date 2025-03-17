@@ -613,7 +613,7 @@ input, textarea {
 
 /* Section Fade Effects */
 section {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.8s ease-in-out;
     position: relative;
 }
@@ -623,7 +623,7 @@ section.visible {
 }
 
 section.fade-out {
-    opacity: 0.15;
+    opacity: 0.6;
 }
 
 /* Ensure About section image stays prominent */
@@ -634,7 +634,7 @@ section.fade-out {
 }
 
 .about.fade-out .about-image {
-    opacity: 0.8 !important;
+    opacity: 0.9 !important;
 }
 
 /* Smooth section transitions */
@@ -648,13 +648,13 @@ section.visible .section-title {
 }
 
 section.fade-out .section-title {
-    transform: translateY(20px);
-    opacity: 0.15;
+    transform: translateY(10px);
+    opacity: 0.7;
 }
 
 /* Initial state for sections */
 section:not(.visible) {
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 section.visible {
