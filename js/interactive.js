@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Interactive elements initialized');
     
-    // Initialize AOS animations if available
+    // Initialize AOS animations with no fade effects
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 1000,
+            duration: 0,
             once: true,
-            mirror: false
+            mirror: false,
+            disable: true // Disable AOS animations completely
         });
     }
     
-    // Track section visibility in analytics
+    // Remove fade-in classes from elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.classList.remove('fade-in');
+        el.style.opacity = '1';
+    });
+    
+    // Track section visibility in analytics only
     const sections = document.querySelectorAll('section');
     const options = {
         root: null,
