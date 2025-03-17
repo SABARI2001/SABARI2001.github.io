@@ -222,5 +222,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Add scroll indicators to each section
+    const sections = document.querySelectorAll('section:not(:last-child)');
+    sections.forEach(section => {
+        const scrollIndicator = document.createElement('div');
+        scrollIndicator.className = 'scroll-indicator';
+        scrollIndicator.innerHTML = '<i class="fas fa-chevron-down"></i>';
+        scrollIndicator.addEventListener('click', () => {
+            const nextSection = section.nextElementSibling;
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        section.appendChild(scrollIndicator);
+    });
+    
+    // Section fade effect on scroll
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // When section is in view
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                
+                // Trigger animations when section is in view
+                const animatedElements = entry.target.querySelectorAll('[data-aos]');
+                animatedElements.forEach(el => {
+                    el.classList.add('aos-animate');
+                });
+            } else {
+                // Optional: fade out sections that are not in view
+                entry.target.style.opacity = '0.3';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0.3'; // Start with reduced opacity
+        sectionObserver.observe(section);
+    });
+    
+    // Smooth scrolling for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
     console.log('All interactive elements initialized');
 }); 
