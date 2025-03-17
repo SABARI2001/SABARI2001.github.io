@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="light-mode">
     <!-- Header -->
@@ -44,10 +46,11 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
+        <div id="particles-js"></div>
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                 <h1>Hi, I'm <span class="highlight">Sabarinathan Karuppusamy</span></h1>
-                <h2>Data Science Enthusiast | ML Engineer | Web Developer</h2>
+                <h2>I'm a <span class="txt-rotate" data-period="2000" data-rotate='[ "Data Science Enthusiast", "ML Engineer", "Web Developer" ]'></span></h2>
                 <p>A highly organized and hard-working individual looking to expand my learnings in Data Science and Machine Learning.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn primary-btn">View My Work</a>
@@ -59,7 +62,7 @@
                     <a href="mailto:sabarinathankarruppusamy2001@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
                 <img src="images/profile.jpg" alt="Sabarinathan Karuppusamy" class="profile-image">
             </div>
         </div>
@@ -68,12 +71,12 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
                     <img src="images/profile.jpg" alt="Sabarinathan Karuppusamy">
                 </div>
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                     <p>Hello! I'm a passionate Data Science and Machine Learning enthusiast with a strong foundation in Python programming and web development. Currently pursuing my degree in Computer Science, I combine analytical thinking with creative problem-solving to build impactful solutions.</p>
                     
                     <p>My journey in tech began with web development and gradually evolved into data science and machine learning. I've worked on various projects involving data analysis, predictive modeling, and web applications, constantly learning and expanding my skillset through hands-on experience.</p>
@@ -113,8 +116,8 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-filter">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="project-filter" data-aos="fade-up" data-aos-delay="200">
                 <button data-category="all" class="active">All</button>
                 <button data-category="data-science">Data Science</button>
                 <button data-category="machine-learning">Machine Learning</button>
@@ -122,7 +125,7 @@
             </div>
             <div class="projects-grid">
                 <!-- Scientific Paper Classifier -->
-                <div class="project-card" data-category="machine-learning">
+                <div class="project-card" data-category="machine-learning" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-image">
                         <img src="images/projects/paper-classifier.jpg" alt="Scientific Paper Classifier">
                     </div>
@@ -145,7 +148,7 @@
                 </div>
 
                 <!-- Email Classification Project -->
-                <div class="project-card" data-category="machine-learning">
+                <div class="project-card" data-category="machine-learning" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-image">
                         <img src="images/projects/email-classification.jpg" alt="Email Classification">
                     </div>
@@ -168,7 +171,7 @@
                 </div>
 
                 <!-- Number Plate Recognition -->
-                <div class="project-card" data-category="machine-learning">
+                <div class="project-card" data-category="machine-learning" data-aos="zoom-in" data-aos-delay="300">
                     <div class="project-image">
                         <img src="images/projects/number-plate.jpg" alt="Number Plate Recognition">
                     </div>
@@ -196,7 +199,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Skills & Tech Stack</h2>
+            <h2 class="section-title" data-aos="fade-up">Skills & Tech Stack</h2>
             <div class="skills-container">
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
@@ -246,7 +249,7 @@
     <!-- Resume Section -->
     <section id="resume" class="resume">
         <div class="container">
-            <h2 class="section-title">Resume & Certifications</h2>
+            <h2 class="section-title" data-aos="fade-up">Resume & Certifications</h2>
             <div class="resume-content">
                 <div class="resume-download">
                     <h3>My Resume</h3>
@@ -298,7 +301,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -387,5 +390,177 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            disable: 'mobile'
+        });
+        
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#6c63ff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#6c63ff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        
+        // Text rotation effect
+        var TxtRotate = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtRotate.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-rotate');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+        };
+    </script>
 </body>
 </html> 
