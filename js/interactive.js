@@ -266,6 +266,27 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = '0.3'; // Start with reduced opacity
         sectionObserver.observe(section);
+        
+        // Special handling for About section
+        if (section.id === 'about') {
+            const profileImage = section.querySelector('.about-image img');
+            if (profileImage) {
+                const aboutObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            profileImage.classList.add('profile-highlight');
+                            console.log('Profile image highlighted');
+                        } else {
+                            profileImage.classList.remove('profile-highlight');
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+                
+                aboutObserver.observe(section);
+            }
+        }
     });
     
     // Smooth scrolling for all internal links
