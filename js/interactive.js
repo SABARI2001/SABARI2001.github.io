@@ -60,61 +60,87 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
     
-    // Typing animation for hero section
-    const txtRotate = document.querySelector('.txt-rotate');
-    if (txtRotate) {
-        const period = txtRotate.getAttribute('data-period');
-        const rotateData = txtRotate.getAttribute('data-rotate');
-        
-        if (rotateData) {
-            try {
-                const toRotate = JSON.parse(rotateData);
-                new TxtRotate(txtRotate, toRotate, period);
-            } catch (e) {
-                console.error('Error parsing rotation data', e);
-            }
-        }
-    }
-    
-    // Text rotation animation
-    function TxtRotate(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    }
-    
-    TxtRotate.prototype.tick = function() {
-        const i = this.loopNum % this.toRotate.length;
-        const fullTxt = this.toRotate[i];
-        
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-        
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-        
-        const that = this;
-        let delta = 200 - Math.random() * 100;
-        
-        if (this.isDeleting) { delta /= 2; }
-        
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
+    // Improved typing animation for hero section
+    class TypeWriter {
+        constructor(txtElement, words, wait = 3000) {
+            this.txtElement = txtElement;
+            this.words = words;
+            this.txt = '';
+            this.wordIndex = 0;
+            this.wait = parseInt(wait, 10);
+            this.type();
             this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
         }
         
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-    };
+        type() {
+            // Current index of word
+            const current = this.wordIndex % this.words.length;
+            // Get full text of current word
+            const fullTxt = this.words[current];
+            
+            // Check if deleting
+            if(this.isDeleting) {
+                // Remove char
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                // Add char
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+            
+            // Insert txt into element with cursor
+            this.txtElement.innerHTML = `<span class="wrap">${this.txt}<span class="cursor">|</span></span>`;
+            
+            // Initial Type Speed
+            let typeSpeed = 100;
+            
+            if(this.isDeleting) {
+                typeSpeed /= 2; // Faster when deleting
+            }
+            
+            // If word is complete
+            if(!this.isDeleting && this.txt === fullTxt) {
+                // Make pause at end
+                typeSpeed = this.wait;
+                // Set delete to true
+                this.isDeleting = true;
+            } else if(this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                // Move to next word
+                this.wordIndex++;
+                // Pause before start typing
+                typeSpeed = 500;
+            }
+            
+            setTimeout(() => this.type(), typeSpeed);
+        }
+    }
+    
+    // Init On DOM Load
+    document.addEventListener('DOMContentLoaded', init);
+    
+    // Init App
+    function init() {
+        const txtElement = document.querySelector('.txt-rotate');
+        if (txtElement) {
+            const words = JSON.parse(txtElement.getAttribute('data-rotate'));
+            const wait = txtElement.getAttribute('data-period');
+            // Init TypeWriter
+            new TypeWriter(txtElement, words, wait);
+        }
+    }
+    
+    // Call init immediately since we're already in DOMContentLoaded
+    init();
+    
+    // Add scroll progress indicator
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+        
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        if (progressBar) {
+            progressBar.style.width = `${scrollPercent}%`;
+        }
+    });
 });
