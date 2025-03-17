@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabarinathan Karuppusamy - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="highlight">Sabarinathan Karuppusamy</span></h1>
+                <h2>Data Science Enthusiast | ML Engineer | Web Developer</h2>
+                <p>A highly organized and hard-working individual looking to expand my learnings in Data Science and Machine Learning.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/SABARI2001" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:sabarinathankarruppusamy2001@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Sabarinathan Karuppusamy" class="profile-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About Me">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm a passionate technologist with a strong interest in data science, machine learning, and web development. With a background in [Your Background], I combine analytical thinking with creative problem-solving to build impactful solutions.</p>
+                    
+                    <p>My journey in tech began when [brief story about how you got started]. Since then, I've been constantly learning and expanding my skillset through projects, courses, and real-world applications.</p>
+                    
+                    <p>I'm particularly interested in [specific areas of interest, e.g., computer vision, natural language processing, full-stack development], and I'm always looking for opportunities to apply my skills to solve meaningful problems.</p>
+                    
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h3>Education</h3>
+                                <p>Your Degree, Your University</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-briefcase"></i>
+                            <div>
+                                <h3>Experience</h3>
+                                <p>X years in relevant fields</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Your City, Country</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-filter">
+                <button data-category="all" class="active">All</button>
+                <button data-category="data-science">Data Science</button>
+                <button data-category="machine-learning">Machine Learning</button>
+                <button data-category="web-dev">Web Development</button>
+            </div>
+            <div class="projects-grid">
+                <!-- Movie Box Office Analysis -->
+                <div class="project-card" data-category="data-science">
+                    <div class="project-image">
+                        <img src="images/projects/movie-analysis.jpg" alt="Movie Box Office Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Movie Box Office Analysis</h3>
+                        <p>Analysis of movie box office performance using data science techniques to uncover trends and patterns.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Jupyter</span>
+                            <span>Data Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SABARI2001/Movie-Box-Office-Analysis" class="btn small-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Covid Vaccination Analysis -->
+                <div class="project-card" data-category="data-science">
+                    <div class="project-image">
+                        <img src="images/projects/covid-analysis.jpg" alt="Covid Vaccination Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Covid Vaccination Analysis</h3>
+                        <p>Comprehensive analysis of COVID-19 vaccination data to track progress and identify patterns.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Jupyter</span>
+                            <span>Data Analysis</span>
+                            <span>Visualization</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SABARI2001/Covid-Vaccination-Analysis" class="btn small-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Insurance Cost Prediction -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-image">
+                        <img src="images/projects/health-insurance.jpg" alt="Health Insurance Cost Prediction">
+                    </div>
+                    <div class="project-content">
+                        <h3>Health Insurance Cost Prediction</h3>
+                        <p>Machine learning model to predict health insurance costs based on various factors.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Machine Learning</span>
+                            <span>Jupyter</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SABARI2001/Health-Insurance-Cost-Prediction" class="btn small-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Resume Builder -->
+                <div class="project-card" data-category="web-dev">
+                    <div class="project-image">
+                        <img src="images/projects/resume-builder.jpg" alt="Online Resume Builder">
+                    </div>
+                    <div class="project-content">
+                        <h3>Online Resume Builder</h3>
+                        <p>Web application for creating professional resumes with customizable templates.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Web Development</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SABARI2001/Online-Resume-Builder" class="btn small-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Jupyter Notebook</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" data-level="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume">
+        <div class="container">
+            <h2 class="section-title">Resume & Certifications</h2>
+            <div class="resume-content">
+                <div class="resume-download">
+                    <h3>My Resume</h3>
+                    <p>Download my resume to learn more about my education, work experience, and skills.</p>
+                    <a href="files/your-resume.pdf" class="btn primary-btn" download><i class="fas fa-download"></i> Download Resume</a>
+                </div>
+                
+                <div class="certifications">
+                    <h3>Certifications</h3>
+                    <div class="certification-items">
+                        <div class="certification-item">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certification-details">
+                                <h4>Deep Learning Specialization</h4>
+                                <p>Coursera - deeplearning.ai</p>
+                                <span class="certification-date">2023</span>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certification-details">
+                                <h4>AWS Certified Cloud Practitioner</h4>
+                                <p>Amazon Web Services</p>
+                                <span class="certification-date">2022</span>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certification-details">
+                                <h4>Full-Stack Web Development</h4>
+                                <p>Udemy</p>
+                                <span class="certification-date">2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog1.jpg" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">June 15, 2023</div>
+                        <h3>Building a Recommendation System from Scratch</h3>
+                        <p>Learn how to build a recommendation system using collaborative filtering and content-based approaches.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog2.jpg" alt="Blog Post 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">May 22, 2023</div>
+                        <h3>Optimizing React Applications for Performance</h3>
+                        <p>Tips and tricks to make your React applications faster and more efficient.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/blog3.jpg" alt="Blog Post 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">April 10, 2023</div>
+                        <h3>Introduction to Natural Language Processing</h3>
+                        <p>A beginner's guide to understanding and implementing NLP techniques.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonials-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"Your Name is an exceptional talent with a strong grasp of both technical concepts and practical implementation. Their work on our project demonstrated creativity and problem-solving skills."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial1.jpg" alt="Testimonial 1">
+                        <div>
+                            <h4>John Doe</h4>
+                            <p>Senior Developer, Company Name</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"I had the pleasure of mentoring Your Name during their internship. They quickly grasped complex concepts and contributed valuable insights to our team projects."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial2.jpg" alt="Testimonial 2">
+                        <div>
+                            <h4>Jane Smith</h4>
+                            <p>Data Science Lead, Company Name</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p>"Your Name's attention to detail and commitment to quality made them stand out in our collaborative project. Their technical skills and communication abilities are impressive."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="images/testimonial3.jpg" alt="Testimonial 3">
+                        <div>
+                            <h4>Robert Johnson</h4>
+                            <p>Professor, University Name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:sabarinathankarruppusamy2001@gmail.com">sabarinathankarruppusamy2001@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank">Sabarinathan Karuppusamy</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/SABARI2001" target="_blank">SABARI2001</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" action="https://formsubmit.co/sabarinathankarruppusamy2001@gmail.com" method="POST">
+                        <!-- Honeypot -->
+                        <input type="text" name="_honey" style="display: none;">
+                        
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <!-- Success Page -->
+                        <input type="hidden" name="_next" value="https://SABARI2001.github.io/portfolio/thanks.html">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Sabarinathan Karuppusamy</h3>
+                    <p>Data Science Enthusiast | ML Engineer | Web Developer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/SABARI2001" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:sabarinathankarruppusamy2001@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sabarinathan Karuppusamy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

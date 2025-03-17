@@ -1,0 +1,30 @@
+# Portfolio Website Dependencies
+
+# Web Framework
+Flask==3.0.0
+gunicorn==21.2.0
+python-dotenv==1.0.0
+
+# For deployment
+whitenoise==6.6.0
+
+# For API development
+fastapi==0.104.1
+uvicorn==0.24.0
+
+# For database
+SQLAlchemy==2.0.23
+
+# For form processing and security
+WTForms==3.1.1
+Flask-WTF==1.2.1
+email-validator==2.1.0.post1
+
+# Development tools
+pytest==7.4.3
+black==23.11.0
+flake8==6.1.0
+
+# Note: This is a simplified version focused on web development.
+# Machine learning packages (TensorFlow, PyTorch, etc.) have been removed to avoid compatibility issues.
+# If you need ML packages later, install them separately based on your system's compatibility. 
