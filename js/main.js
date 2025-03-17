@@ -13,20 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Theme toggling functionality
     const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     
     // Set initial theme based on user's system preference
     if (prefersDarkScheme.matches) {
-        document.body.setAttribute('data-theme', 'dark');
+        body.setAttribute('data-theme', 'dark');
     }
 
     themeToggle.addEventListener('click', () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
-            document.body.removeAttribute('data-theme');
-        } else {
-            document.body.setAttribute('data-theme', 'dark');
-        }
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
     });
 
     // Smooth scrolling for navigation links
@@ -188,4 +185,248 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Visitor tracking
+    function trackVisitor(visitorName, source) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'visitor_info', {
+                'visitor_name': visitorName,
+                'source': source
+            });
+        }
+    }
+
+    // Show visitor popup after a short delay
+    setTimeout(() => {
+        if (!localStorage.getItem('visitorName')) {
+            const visitorName = prompt('Welcome! Please enter your name:');
+            if (visitorName) {
+                localStorage.setItem('visitorName', visitorName);
+                const source = new URLSearchParams(window.location.search).get('utm_source') || 'direct';
+                trackVisitor(visitorName, source);
+            }
+        }
+    }, 2000);
+
+    // Track social media clicks
+    document.querySelectorAll('.social-icons a, .contact-info a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const platform = e.currentTarget.getAttribute('href').includes('linkedin') ? 'LinkedIn' :
+                            e.currentTarget.getAttribute('href').includes('github') ? 'GitHub' : 'Email';
+            const visitorName = localStorage.getItem('visitorName') || 'Anonymous';
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'social_click', {
+                    'platform': platform,
+                    'visitor_name': visitorName
+                });
+            }
+        });
+    });
+
+    // Enhanced form submission tracking
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            const formData = new FormData(contactForm);
+            const visitorName = formData.get('name');
+            localStorage.setItem('visitorName', visitorName);
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'form_submission', {
+                    'visitor_name': visitorName,
+                    'visitor_email': formData.get('email')
+                });
+            }
+        });
+    }
+
+    // Track project clicks
+    document.querySelectorAll('.project-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const projectTitle = e.currentTarget.closest('.project-card').querySelector('h3').textContent;
+            const visitorName = localStorage.getItem('visitorName') || 'Anonymous';
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'project_click', {
+                    'project_title': projectTitle,
+                    'visitor_name': visitorName
+                });
+            }
+        });
+    });
+
+    // Track resume download
+    const resumeDownload = document.querySelector('.resume-download a');
+    if (resumeDownload) {
+        resumeDownload.addEventListener('click', () => {
+            const visitorName = localStorage.getItem('visitorName') || 'Anonymous';
+            
+            if (typeof gtag === 'function') {
+                gtag('event', 'resume_download', {
+                    'visitor_name': visitorName
+                });
+            }
+        });
+    }
+
+    // Analytics Enhancement
+    function initializeAnalytics() {
+        // Session timing tracking
+        const sessionStartTime = new Date();
+        window.addEventListener('beforeunload', () => {
+            const sessionDuration = new Date() - sessionStartTime;
+            gtag('event', 'session_duration', {
+                'duration_seconds': Math.floor(sessionDuration / 1000)
+            });
+        });
+
+        // Scroll depth tracking
+        let maxScroll = 0;
+        window.addEventListener('scroll', () => {
+            const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (maxScroll >= 25 && maxScroll < 50) {
+                    gtag('event', 'scroll_depth', { 'depth': '25%' });
+                } else if (maxScroll >= 50 && maxScroll < 75) {
+                    gtag('event', 'scroll_depth', { 'depth': '50%' });
+                } else if (maxScroll >= 75 && maxScroll < 90) {
+                    gtag('event', 'scroll_depth', { 'depth': '75%' });
+                } else if (maxScroll >= 90) {
+                    gtag('event', 'scroll_depth', { 'depth': '90%' });
+                }
+            }
+        });
+
+        // Section visibility tracking
+        const sections = document.querySelectorAll('section');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gtag('event', 'section_view', {
+                        'section_id': entry.target.id,
+                        'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // Enhanced project interaction tracking
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const projectTitle = card.querySelector('h3').textContent;
+                gtag('event', 'project_hover', {
+                    'project_title': projectTitle,
+                    'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                });
+            });
+
+            // Track project link clicks with time spent viewing
+            const projectLinks = card.querySelectorAll('.project-links a');
+            const projectHoverStart = new Map();
+
+            card.addEventListener('mouseenter', () => {
+                projectHoverStart.set(card, new Date());
+            });
+
+            projectLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const hoverStart = projectHoverStart.get(card);
+                    const timeSpent = hoverStart ? new Date() - hoverStart : 0;
+                    const projectTitle = card.querySelector('h3').textContent;
+                    
+                    gtag('event', 'project_click', {
+                        'project_title': projectTitle,
+                        'time_spent_seconds': Math.floor(timeSpent / 1000),
+                        'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                    });
+                });
+            });
+        });
+
+        // Skill section interaction tracking
+        document.querySelectorAll('.skill-item').forEach(skill => {
+            const skillName = skill.querySelector('span').textContent;
+            const skillLevel = skill.querySelector('.skill-level').getAttribute('data-level');
+            
+            skill.addEventListener('mouseenter', () => {
+                gtag('event', 'skill_view', {
+                    'skill_name': skillName,
+                    'skill_level': skillLevel,
+                    'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                });
+            });
+        });
+
+        // Form interaction tracking
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            const formFields = contactForm.querySelectorAll('input, textarea');
+            const fieldInteractions = new Map();
+
+            formFields.forEach(field => {
+                field.addEventListener('focus', () => {
+                    fieldInteractions.set(field.id, new Date());
+                });
+
+                field.addEventListener('blur', () => {
+                    const startTime = fieldInteractions.get(field.id);
+                    if (startTime) {
+                        const timeSpent = new Date() - startTime;
+                        gtag('event', 'form_field_interaction', {
+                            'field_id': field.id,
+                            'time_spent_seconds': Math.floor(timeSpent / 1000),
+                            'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                        });
+                    }
+                });
+            });
+
+            contactForm.addEventListener('submit', () => {
+                gtag('event', 'form_submission', {
+                    'visitor_name': contactForm.querySelector('#name').value,
+                    'visitor_email': contactForm.querySelector('#email').value,
+                    'subject': contactForm.querySelector('#subject').value
+                });
+            });
+        }
+
+        // Track external link clicks
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', () => {
+                gtag('event', 'external_link_click', {
+                    'link_url': link.href,
+                    'link_text': link.textContent.trim(),
+                    'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                });
+            });
+        });
+
+        // Track resume interactions
+        const resumeDownload = document.querySelector('.resume-download a');
+        if (resumeDownload) {
+            resumeDownload.addEventListener('click', () => {
+                gtag('event', 'resume_download', {
+                    'visitor_name': localStorage.getItem('visitorName') || 'Anonymous',
+                    'timestamp': new Date().toISOString()
+                });
+            });
+        }
+
+        // Track certification views
+        document.querySelectorAll('.certification-item').forEach(cert => {
+            const certName = cert.querySelector('h4').textContent;
+            cert.addEventListener('mouseenter', () => {
+                gtag('event', 'certification_view', {
+                    'certification_name': certName,
+                    'visitor_name': localStorage.getItem('visitorName') || 'Anonymous'
+                });
+            });
+        });
+    }
+
+    // Initialize analytics when DOM is loaded
+    initializeAnalytics();
 }); 
