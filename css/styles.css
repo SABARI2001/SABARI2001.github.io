@@ -854,6 +854,58 @@ footer {
     transform: translateY(-5px);
 }
 
+/* Animated heading in hero section */
+.animated-heading {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: left;
+    color: var(--primary-color);
+    animation: textSlide 9s infinite;
+    opacity: 0;
+}
+
+.animated-text:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-text:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.animated-text:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes textSlide {
+    0%, 10% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    15%, 30% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    35%, 45% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
 /* Typing animation cursor */
 .txt-rotate .cursor {
     display: inline-block;
