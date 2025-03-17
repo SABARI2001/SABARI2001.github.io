@@ -60,54 +60,49 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
     
-    // Improved typing animation for hero section
+    // Professional typewriter effect
     class TypeWriter {
-        constructor(txtElement, words, wait = 3000) {
-            this.txtElement = txtElement;
-            this.words = words;
+        constructor(element) {
+            this.element = element;
+            this.words = JSON.parse(element.getAttribute('data-text'));
+            this.wait = 3000; // Wait time after typing a word
+            this.currentWordIndex = 0;
             this.txt = '';
-            this.wordIndex = 0;
-            this.wait = parseInt(wait, 10);
-            this.type();
             this.isDeleting = false;
+            this.type();
         }
         
         type() {
-            // Current index of word
-            const current = this.wordIndex % this.words.length;
+            // Current word index
+            const current = this.currentWordIndex % this.words.length;
             // Get full text of current word
             const fullTxt = this.words[current];
             
             // Check if deleting
-            if(this.isDeleting) {
-                // Remove char
+            if (this.isDeleting) {
+                // Remove character
                 this.txt = fullTxt.substring(0, this.txt.length - 1);
             } else {
-                // Add char
+                // Add character
                 this.txt = fullTxt.substring(0, this.txt.length + 1);
             }
             
-            // Insert txt into element with cursor
-            this.txtElement.innerHTML = `<span class="wrap">${this.txt}<span class="cursor">|</span></span>`;
+            // Update element text
+            this.element.textContent = this.txt;
             
-            // Initial Type Speed
-            let typeSpeed = 100;
-            
-            if(this.isDeleting) {
-                typeSpeed /= 2; // Faster when deleting
-            }
+            // Type speed
+            let typeSpeed = this.isDeleting ? 50 : 100;
             
             // If word is complete
-            if(!this.isDeleting && this.txt === fullTxt) {
-                // Make pause at end
+            if (!this.isDeleting && this.txt === fullTxt) {
+                // Pause at end
                 typeSpeed = this.wait;
-                // Set delete to true
                 this.isDeleting = true;
-            } else if(this.isDeleting && this.txt === '') {
+            } else if (this.isDeleting && this.txt === '') {
                 this.isDeleting = false;
                 // Move to next word
-                this.wordIndex++;
-                // Pause before start typing
+                this.currentWordIndex++;
+                // Pause before typing
                 typeSpeed = 500;
             }
             
@@ -115,22 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Init On DOM Load
-    document.addEventListener('DOMContentLoaded', init);
-    
-    // Init App
-    function init() {
-        const txtElement = document.querySelector('.txt-rotate');
-        if (txtElement) {
-            const words = JSON.parse(txtElement.getAttribute('data-rotate'));
-            const wait = txtElement.getAttribute('data-period');
-            // Init TypeWriter
-            new TypeWriter(txtElement, words, wait);
-        }
+    // Initialize typewriter
+    const typewriterElement = document.querySelector('.typewriter-text');
+    if (typewriterElement) {
+        new TypeWriter(typewriterElement);
     }
-    
-    // Call init immediately since we're already in DOMContentLoaded
-    init();
     
     // Add scroll progress indicator
     window.addEventListener('scroll', () => {
