@@ -136,37 +136,66 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(currentTestimonial);
     }, 5000);
 
-    // Contact form handling
+    // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
-    contactForm?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Add loading state to submit button
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-
-        // Collect form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            // Here you would typically send the data to your backend
-            // For now, we'll simulate a delay
-            await new Promise(resolve => setTimeout(resolve, 1000));
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Show success message
-            alert('Message sent successfully!');
-            contactForm.reset();
-        } catch (error) {
-            alert('Failed to send message. Please try again.');
-        } finally {
-            // Reset button state
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }
-    });
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const buttonText = submitBtn.querySelector('.button-text');
+            const loader = submitBtn.querySelector('.loader');
+            
+            // Show loading state
+            buttonText.style.display = 'none';
+            loader.style.display = 'block';
+            submitBtn.disabled = true;
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('send-mail.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showNotification('success', data.message);
+                    contactForm.reset();
+                } else {
+                    showNotification('error', data.message);
+                }
+            } catch (error) {
+                showNotification('error', 'An error occurred. Please try again later.');
+            } finally {
+                // Reset button state
+                buttonText.style.display = 'block';
+                loader.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    }
+
+    // Notification System
+    function showNotification(type, message) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        // Trigger animation
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        // Remove notification after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+        }, 5000);
+    }
 
     // Interactive CV
     const cv = document.querySelector('.interactive-cv');
