@@ -137,19 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000);
 
     // Notification System
-    function showNotification(type, message) {
+    function showNotification(message, type = 'success') {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
         notification.textContent = message;
         
         document.body.appendChild(notification);
         
-        // Animate in
-        setTimeout(() => {
-            notification.classList.add('show');
-        }, 10);
+        // Trigger reflow
+        notification.offsetHeight;
         
-        // Animate out and remove
+        notification.classList.add('show');
+        
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => {
@@ -231,22 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Enhanced form submission tracking
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            const formData = new FormData(contactForm);
-            const visitorName = formData.get('name');
-            localStorage.setItem('visitorName', visitorName);
-            
-            if (typeof gtag === 'function') {
-                gtag('event', 'form_submission', {
-                    'visitor_name': visitorName,
-                    'visitor_email': formData.get('email')
-                });
-            }
-        });
-    }
 
     // Track project clicks
     document.querySelectorAll('.project-links a').forEach(link => {
