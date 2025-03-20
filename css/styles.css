@@ -226,34 +226,80 @@ nav {
 }
 
 /* Skills section improvements */
-.skills-container {
-    margin-top: 3rem; /* More space at top */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
 .skill-category {
     background-color: var(--card-bg);
-    padding: 2.5rem; /* More padding */
+    padding: 2rem;
     border-radius: 1rem;
-    margin-bottom: 2.5rem; /* More space between categories */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .skill-item {
-    margin-bottom: 1.5rem; /* More space between skills */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 .skill-bar {
+    width: 100%;
     height: 8px;
     background-color: var(--border-color);
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 0.5rem;
 }
 
-.skill-level {
+.skill-progress {
     height: 100%;
     background-color: var(--primary-color);
     border-radius: 4px;
-    transition: width 1s ease;
+    transition: width 1s ease-in-out;
+}
+
+/* Add animation for skill bars */
+.skill-progress {
+    width: 0;
+    animation: fillSkillBar 1.5s ease forwards;
+}
+
+@keyframes fillSkillBar {
+    to {
+        width: var(--skill-level);
+    }
+}
+
+/* Responsive adjustments for skills section */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
 }
 
 /* Section titles with more space */
