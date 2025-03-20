@@ -136,49 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(currentTestimonial);
     }, 5000);
 
-    // Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const buttonText = submitBtn.querySelector('.button-text');
-            const loader = submitBtn.querySelector('.loader');
-            
-            // Show loading state
-            buttonText.style.display = 'none';
-            loader.style.display = 'block';
-            submitBtn.disabled = true;
-
-            // Get form data
-            const formData = new FormData(contactForm);
-            
-            try {
-                const response = await fetch('send-mail.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    showNotification('success', data.message);
-                    contactForm.reset();
-                } else {
-                    showNotification('error', data.message);
-                }
-            } catch (error) {
-                showNotification('error', 'An error occurred. Please try again later.');
-            } finally {
-                // Reset button state
-                buttonText.style.display = 'block';
-                loader.style.display = 'none';
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
     // Notification System
     function showNotification(type, message) {
         const notification = document.createElement('div');
@@ -187,14 +144,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.appendChild(notification);
         
-        // Trigger animation
-        setTimeout(() => notification.classList.add('show'), 10);
+        // Animate in
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
         
-        // Remove notification after 5 seconds
+        // Animate out and remove
         setTimeout(() => {
             notification.classList.remove('show');
-            setTimeout(() => notification.remove(), 300);
-        }, 5000);
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
     }
 
     // Interactive CV
