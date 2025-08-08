@@ -28,7 +28,7 @@ A clean, modern, and responsive portfolio website showcasing my projects, skills
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/SABARI2001/portfolio.git
    cd portfolio
    ```
 
@@ -104,13 +104,9 @@ You can deploy this website using various platforms:
    - Import your GitHub repository
    - Deploy through Vercel's interface
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
 For any queries or suggestions, please reach out:
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
-- GitHub: [Your GitHub](https://github.com/yourusername) 
+- Email: sabarinathankarruppusamy2001@gmail.com
+- LinkedIn:https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9
