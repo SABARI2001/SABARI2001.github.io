@@ -1,31 +1,31 @@
 particlesJS('particles-js', {
     particles: {
         number: {
-            value: 70,
-            density: { enable: true, value_area: 900 }
+            value: 55,
+            density: { enable: true, value_area: 1000 }
         },
-        color: { value: '#6366f1' },
+        color: { value: '#0f9c8a' },
         shape: { type: 'circle' },
         opacity: {
-            value: 0.45,
+            value: 0.35,
             random: true,
-            anim: { enable: true, speed: 1, opacity_min: 0.15, sync: false }
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
         },
         size: {
-            value: 2.5,
+            value: 2.2,
             random: true,
-            anim: { enable: true, speed: 2, size_min: 0.5, sync: false }
+            anim: { enable: true, speed: 1.5, size_min: 0.4, sync: false }
         },
         line_linked: {
             enable: true,
-            distance: 140,
-            color: '#818cf8',
-            opacity: 0.25,
+            distance: 130,
+            color: '#0f9c8a',
+            opacity: 0.18,
             width: 1
         },
         move: {
             enable: true,
-            speed: 1.8,
+            speed: 1.2,
             direction: 'none',
             random: true,
             straight: false,
@@ -41,8 +41,8 @@ particlesJS('particles-js', {
             resize: true
         },
         modes: {
-            grab: { distance: 120, line_linked: { opacity: 0.5 } },
-            push: { particles_nb: 3 }
+            grab: { distance: 110, line_linked: { opacity: 0.4 } },
+            push: { particles_nb: 2 }
         }
     },
     retina_detect: true

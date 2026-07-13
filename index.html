@@ -11,7 +11,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sabari2001.github.io/">
     <title>Sabarinathan Karuppusamy | AI/ML & Software Engineer</title>
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7F925T2T9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,22 +18,22 @@
         gtag('js', new Date());
         gtag('config', 'G-J7F925T2T9');
     </script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20260713b">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body data-theme="light">
+    <div class="noise" aria-hidden="true"></div>
     <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
 
-    <!-- Header -->
     <header class="site-header">
         <div class="container">
             <nav>
                 <a href="#hero" class="logo">
                     <span class="logo-mark">SK</span>
-                    <span class="logo-text">Sabari</span>
+                    <span class="logo-text">Sabarinathan</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
@@ -45,43 +44,30 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <button class="theme-toggle" aria-label="Toggle theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="mobile-menu" aria-label="Open menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <button class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+                    <button class="mobile-menu" aria-label="Open menu"><i class="fas fa-bars"></i></button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="hero">
+        <div class="hero-mesh" aria-hidden="true"></div>
         <div id="particles-js"></div>
-        <div class="hero-glow hero-glow-1"></div>
-        <div class="hero-glow hero-glow-2"></div>
-        <div class="container">
+        <div class="container hero-layout">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="pulse-dot"></span>
-                    Available for opportunities
-                </div>
-                <h1>Hi, I'm <span class="gradient-text">Sabarinathan Karuppusamy</span></h1>
+                <p class="hero-kicker">Junior Software Engineer · Prudent AI</p>
+                <h1 class="hero-brand">Sabarinathan<br><span>Karuppusamy</span></h1>
                 <h2 class="typewriter">
-                    I'm a <span class="typewriter-text" data-text='["Junior Software Engineer", "AI/ML Engineer", "Data Engineer", "LLM & RAG Specialist"]'></span>
+                    <span class="typewriter-prefix">I build</span>
+                    <span class="typewriter-text" data-text='["LLM & RAG systems", "fintech AI pipelines", "reliable ML products", "data-driven software"]'></span>
                 </h2>
                 <p class="hero-subtitle">
-                    Junior Software Engineer at <strong>Prudent AI</strong> · AI/ML &amp; Data Engineering · Building reliable, scalable software for fintech automation.
+                    AI/ML &amp; Data Engineering — turning document intelligence and generative AI into production software.
                 </p>
-                <div class="hero-meta">
-                    <span><i class="fas fa-location-dot"></i> Coimbatore, Tamil Nadu</span>
-                    <span><i class="fas fa-briefcase"></i> 1+ years experience</span>
-                </div>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn primary-btn"><i class="fas fa-rocket"></i> View My Work</a>
-                    <a href="files/Sabarinathan_Resume.pdf" class="btn secondary-btn" download><i class="fas fa-download"></i> Download CV</a>
-                    <a href="#contact" class="btn ghost-btn">Contact Me</a>
+                    <a href="#projects" class="btn primary-btn">View work</a>
+                    <a href="files/Sabarinathan_Resume.pdf" class="btn secondary-btn" download>Download CV</a>
                 </div>
                 <div class="social-icons">
                     <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -89,516 +75,346 @@
                     <a href="mailto:sabarinathankarruppusamy2001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
+            <aside class="hero-aside">
+                <div class="hero-portrait">
+                    <img src="images/profile.jpg" alt="Sabarinathan Karuppusamy">
+                </div>
+                <div class="hero-aside-meta">
+                    <div><strong>Coimbatore</strong><span>Tamil Nadu, IN</span></div>
+                    <div><strong>1+ yrs</strong><span>Experience</span></div>
+                    <div><strong>8.3</strong><span>M.Sc CGPA</span></div>
+                </div>
+            </aside>
         </div>
+        <a href="#about" class="scroll-cue" aria-label="Scroll to about"><span></span></a>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/profile.jpg" alt="Sabarinathan Karuppusamy" class="about-profile-img">
-                    <div class="image-backdrop"></div>
-                    <div class="image-frame"></div>
+            <div class="section-head">
+                <span class="section-index">01</span>
+                <div>
+                    <h2 class="section-title">About</h2>
+                    <p class="section-subtitle">M.Sc Data Science graduate building intelligent systems for the real world</p>
                 </div>
-                <div class="about-text">
-                    <h3 class="about-headline">AI/ML Engineer building intelligent, production-ready systems</h3>
-                    <p>
-                        M.Sc Data Science graduate from <strong>Coimbatore Institute of Technology</strong> (CGPA 8.3). I specialize in LLM-powered applications, RAG pipelines, and data engineering — turning complex problems into reliable software.
+            </div>
+            <div class="about-grid">
+                <div class="about-lead">
+                    <p class="lead-text">
+                        I specialize in <em>LLM-powered applications</em>, RAG pipelines, and data engineering — shipping reliable software for fintech automation and recruitment AI.
                     </p>
                     <p>
-                        Currently working as a <strong>Junior Software Engineer at Prudent AI</strong>, a fintech pre-underwriting automation platform. Previously, I built LLM-powered recruitment tools at <strong>RedBlackTree</strong> and delivered predictive analytics solutions as a <strong>Data Analyst at Miwafes</strong>.
+                        Currently a <strong>Junior Software Engineer at Prudent AI</strong>. Previously built LLM resume parsing &amp; RAG chatbots at <strong>RedBlackTree</strong>, and predictive analytics at <strong>Miwafes</strong>.
+                    </p>
+                    <p>
+                        Graduated from <strong>Coimbatore Institute of Technology</strong> with an Integrated M.Sc in Data Science (2020–2025).
                     </p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <span class="stat-value">1+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">3</span>
-                        <span class="stat-label">Companies</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">8.3</span>
-                        <span class="stat-label">CGPA (M.Sc)</span>
-                    </div>
-                </div>
-                <div class="about-details">
-                    <div class="detail">
+                <div class="about-panels">
+                    <article class="info-panel">
                         <i class="fas fa-graduation-cap"></i>
-                        <div>
-                            <h4>Education</h4>
-                            <p>M.Sc Data Science (Integrated)</p>
-                            <small>Coimbatore Institute of Technology</small>
-                            <p class="detail-meta">2020 – 2025 · CGPA 8.3</p>
-                        </div>
-                    </div>
-                    <div class="detail">
+                        <h3>Education</h3>
+                        <p>M.Sc Data Science (Integrated)</p>
+                        <span>CIT · 2020–2025 · CGPA 8.3</span>
+                    </article>
+                    <article class="info-panel">
                         <i class="fas fa-award"></i>
-                        <div>
-                            <h4>Certifications</h4>
-                            <p>SQL (Basic) — HackerRank</p>
-                            <small>Credential ID: 3A4E460560BC · Nov 2022</small>
-                            <p class="detail-meta"><a href="https://hackerrank.com/certificates/3a4e460560bc" target="_blank" rel="noopener">View Certificate</a></p>
-                        </div>
-                    </div>
-                    <div class="detail">
+                        <h3>Certification</h3>
+                        <p>SQL (Basic) — HackerRank</p>
+                        <span><a href="https://hackerrank.com/certificates/3a4e460560bc" target="_blank" rel="noopener">View certificate</a></span>
+                    </article>
+                    <article class="info-panel">
                         <i class="fas fa-trophy"></i>
-                        <div>
-                            <h4>Highlights</h4>
-                            <p>M.Sc Data Science Graduate — Class of 2025</p>
-                            <small>Melinia Hackathon — Team Data Pirates, CIT</small>
-                            <p class="detail-meta">COVID-19 Vaccination Data Analysis — National Conference</p>
-                        </div>
-                    </div>
+                        <h3>Highlights</h3>
+                        <p>Melinia Hackathon · Data Pirates</p>
+                        <span>COVID-19 vaccination data paper</span>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <p class="section-subtitle">Building AI-powered products across fintech, recruitment, and analytics</p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker current"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Junior Software Engineer</h3>
-                                <p class="company"><a href="https://www.linkedin.com/company/prudentai1" target="_blank" rel="noopener">Prudent AI</a></p>
-                            </div>
-                            <span class="timeline-date">Dec 2025 – Present</span>
-                        </div>
-                        <p class="timeline-location"><i class="fas fa-location-dot"></i> Chennai, Tamil Nadu</p>
-                        <p>Building software for a pre-underwriting automation platform — document classification, income verification, and compliance workflows for financial services at origination.</p>
-                        <div class="timeline-tags">
-                            <span>Python</span><span>Fintech</span><span>Document AI</span><span>Software Engineering</span>
-                        </div>
-                    </div>
+            <div class="section-head">
+                <span class="section-index">02</span>
+                <div>
+                    <h2 class="section-title">Experience</h2>
+                    <p class="section-subtitle">Building AI products across fintech, recruitment, and analytics</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>AI/ML Engineer</h3>
-                                <p class="company"><a href="https://www.linkedin.com/company/redblacktree" target="_blank" rel="noopener">RedBlackTree</a></p>
-                            </div>
-                            <span class="timeline-date">Dec 2024 – Apr 2025</span>
-                        </div>
-                        <p class="timeline-location"><i class="fas fa-location-dot"></i> Chennai, Tamil Nadu</p>
-                        <ul class="timeline-list">
-                            <li>Designed an LLM-powered resume parsing system extracting skills, experience, education, and certifications</li>
-                            <li>Built a RAG-based chatbot for dynamic candidate engagement and information collection</li>
-                            <li>Automated end-to-end workflows for resume parsing, candidate interaction, and ATS integration</li>
+            </div>
+            <div class="exp-list">
+                <article class="exp-row current">
+                    <div class="exp-when">
+                        <span class="exp-status">Now</span>
+                        <time>Dec 2025 – Present</time>
+                    </div>
+                    <div class="exp-body">
+                        <h3>Junior Software Engineer</h3>
+                        <p class="exp-company"><a href="https://www.linkedin.com/company/prudentai1" target="_blank" rel="noopener">Prudent AI</a> · Chennai</p>
+                        <p>Pre-underwriting automation — document classification, income verification, and compliance workflows for financial services at origination.</p>
+                        <div class="tag-row"><span>Python</span><span>Fintech</span><span>Document AI</span></div>
+                    </div>
+                </article>
+                <article class="exp-row">
+                    <div class="exp-when">
+                        <time>Dec 2024 – Apr 2025</time>
+                    </div>
+                    <div class="exp-body">
+                        <h3>AI/ML Engineer</h3>
+                        <p class="exp-company"><a href="https://www.linkedin.com/company/redblacktree" target="_blank" rel="noopener">RedBlackTree</a> · Chennai</p>
+                        <ul>
+                            <li>LLM resume parser extracting skills, experience, education &amp; certifications</li>
+                            <li>RAG chatbot for candidate engagement and information collection</li>
+                            <li>End-to-end ATS integration workflows</li>
                         </ul>
-                        <div class="timeline-tags">
-                            <span>LLM</span><span>RAG</span><span>Pinecone</span><span>Python</span><span>SQL</span>
-                        </div>
+                        <div class="tag-row"><span>LLM</span><span>RAG</span><span>Pinecone</span><span>Python</span></div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Data Analyst</h3>
-                                <p class="company"><a href="https://www.linkedin.com/company/miwafes" target="_blank" rel="noopener">Miwafes</a></p>
-                            </div>
-                            <span class="timeline-date">Jun 2023 – Nov 2023</span>
-                        </div>
-                        <p class="timeline-location"><i class="fas fa-location-dot"></i> Chennai, Tamil Nadu</p>
-                        <ul class="timeline-list">
-                            <li>Segmented customer base via survey analysis, improving targeted service delivery by 10%</li>
-                            <li>Built a BiRNN churn prediction model improving accuracy by 15%</li>
-                            <li>Developed NLP sentiment analysis for customer feedback; reports boosted acquisition/retention by 12%</li>
+                </article>
+                <article class="exp-row">
+                    <div class="exp-when">
+                        <time>Jun 2023 – Nov 2023</time>
+                    </div>
+                    <div class="exp-body">
+                        <h3>Data Analyst</h3>
+                        <p class="exp-company"><a href="https://www.linkedin.com/company/miwafes" target="_blank" rel="noopener">Miwafes</a> · Chennai</p>
+                        <ul>
+                            <li>Customer segmentation improving targeted delivery by 10%</li>
+                            <li>BiRNN churn model — +15% prediction accuracy</li>
+                            <li>NLP feedback analysis boosting acquisition/retention by 12%</li>
                         </ul>
-                        <div class="timeline-tags">
-                            <span>Python</span><span>Deep Learning</span><span>NLP</span><span>Analytics</span>
-                        </div>
+                        <div class="tag-row"><span>Deep Learning</span><span>NLP</span><span>Analytics</span></div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Selected work from GitHub and professional projects</p>
+            <div class="section-head">
+                <span class="section-index">03</span>
+                <div>
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-subtitle">Selected work from GitHub and professional builds</p>
+                </div>
+            </div>
             <div class="project-filter">
                 <button data-category="all" class="active">All</button>
-                <button data-category="machine-learning">Machine Learning</button>
+                <button data-category="machine-learning">ML</button>
                 <button data-category="llm">LLM / AI</button>
-                <button data-category="web-dev">Web Development</button>
-                <button data-category="data-science">Data Science</button>
+                <button data-category="web-dev">Web</button>
+                <button data-category="data-science">Data</button>
             </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="machine-learning">
-                    <div class="project-image">
+            <div class="bento">
+                <article class="bento-item featured" data-category="machine-learning">
+                    <div class="bento-media">
                         <img src="images/projects/scientific paper .jpg" alt="Scientific Paper Recommendation System">
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Scientific Paper Recommendation System</h3>
-                        <p>Automated classification and recommendation of scientific papers using NLP and machine learning techniques for domain-specific research discovery.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>NLP</span><span>Scikit-learn</span><span>Deep Learning</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001/Scientific-Paper-Recommendation-System" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
+                    <div class="bento-copy">
+                        <span class="bento-cat">Machine Learning</span>
+                        <h3>Scientific Paper Recommendation</h3>
+                        <p>NLP-driven classification and recommendation for domain-specific research discovery.</p>
+                        <div class="tag-row"><span>Python</span><span>NLP</span><span>Scikit-learn</span></div>
+                        <a href="https://github.com/SABARI2001/Scientific-Paper-Recommendation-System" target="_blank" rel="noopener" class="bento-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card" data-category="llm">
-                    <div class="project-image project-image-placeholder">
-                        <div class="placeholder-icon"><i class="fas fa-robot"></i></div>
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>LLM Resume Parser &amp; RAG Chatbot</h3>
-                        <p>Professional project at RedBlackTree — LLM-powered resume parsing with structured data extraction and a RAG chatbot for candidate engagement and ATS integration.</p>
-                        <div class="project-tech">
-                            <span>LLM</span><span>RAG</span><span>Pinecone</span><span>Python</span><span>OCR</span>
-                        </div>
-                        <div class="project-links">
-                            <span class="project-badge">Professional</span>
-                        </div>
-                    </div>
-                </div>
+                <article class="bento-item" data-category="llm">
+                    <div class="bento-icon"><i class="fas fa-robot"></i></div>
+                    <span class="bento-cat">LLM / Professional</span>
+                    <h3>Resume Parser &amp; RAG Chatbot</h3>
+                    <p>LLM parsing + RAG engagement pipeline built at RedBlackTree.</p>
+                    <div class="tag-row"><span>LLM</span><span>RAG</span><span>Pinecone</span></div>
+                </article>
 
-                <div class="project-card" data-category="machine-learning">
-                    <div class="project-image">
+                <article class="bento-item" data-category="machine-learning">
+                    <div class="bento-media compact">
                         <img src="images/projects/spam_mail.jpg" alt="Email Classification">
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Email Classification System</h3>
-                        <p>ML model to classify emails (spam/ham) using NLP techniques with 97% classification accuracy.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Scikit-learn</span><span>NLTK</span><span>NLP</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    <span class="bento-cat">NLP</span>
+                    <h3>Email Classification</h3>
+                    <p>Spam/ham classifier with 97% accuracy.</p>
+                    <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-                <div class="project-card" data-category="machine-learning">
-                    <div class="project-image">
+                <article class="bento-item" data-category="machine-learning">
+                    <div class="bento-media compact">
                         <img src="images/projects/number plate.jpg" alt="Number Plate Recognition">
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
                     </div>
-                    <div class="project-content">
-                        <h3>Number Plate Recognition</h3>
-                        <p>Automated vehicle number plate detection and recognition using computer vision, deep learning, and OCR with real-time processing.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>OpenCV</span><span>TensorFlow</span><span>OCR</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    <span class="bento-cat">Computer Vision</span>
+                    <h3>Number Plate Recognition</h3>
+                    <p>OpenCV + TensorFlow OCR pipeline.</p>
+                    <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-                <div class="project-card" data-category="web-dev">
-                    <div class="project-image project-image-placeholder">
-                        <div class="placeholder-icon"><i class="fas fa-wallet"></i></div>
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Expense Tracker</h3>
-                        <p>Full-stack expense tracking application for managing personal finances with intuitive UI and data persistence.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Django</span><span>Web App</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001/Expense_tracker" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <article class="bento-item" data-category="web-dev">
+                    <div class="bento-icon"><i class="fas fa-wallet"></i></div>
+                    <span class="bento-cat">Web</span>
+                    <h3>Expense Tracker</h3>
+                    <p>Django full-stack personal finance app.</p>
+                    <a href="https://github.com/SABARI2001/Expense_tracker" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-                <div class="project-card" data-category="data-science">
-                    <div class="project-image project-image-placeholder">
-                        <div class="placeholder-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Global Market Visualization (2012–2016)</h3>
-                        <p>Interactive visualization of global market trading data showcasing sales and profit trends across regions through dynamic charts and maps.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Data Viz</span><span>Analytics</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001/Global-market-2012-2016" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <article class="bento-item" data-category="data-science">
+                    <div class="bento-icon"><i class="fas fa-chart-line"></i></div>
+                    <span class="bento-cat">Data Viz</span>
+                    <h3>Global Market 2012–2016</h3>
+                    <p>Interactive trading &amp; profit visualizations.</p>
+                    <a href="https://github.com/SABARI2001/Global-market-2012-2016" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-                <div class="project-card" data-category="machine-learning">
-                    <div class="project-image project-image-placeholder">
-                        <div class="placeholder-icon"><i class="fas fa-heart-pulse"></i></div>
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Heart Disease Prediction</h3>
-                        <p>Machine learning model to predict heart disease risk from clinical features, enabling early detection and preventive healthcare insights.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>Scikit-learn</span><span>ML</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001/HeartDisease" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <article class="bento-item" data-category="machine-learning">
+                    <div class="bento-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <span class="bento-cat">Healthcare ML</span>
+                    <h3>Heart Disease Prediction</h3>
+                    <p>Clinical risk prediction model.</p>
+                    <a href="https://github.com/SABARI2001/HeartDisease" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-                <div class="project-card" data-category="llm">
-                    <div class="project-image project-image-placeholder">
-                        <div class="placeholder-icon"><i class="fas fa-comments"></i></div>
-                        <div class="project-overlay"><i class="fas fa-arrow-up-right-from-square"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3>AI Chatbot</h3>
-                        <p>Conversational AI chatbot built with modern NLP and generative AI techniques for interactive user engagement.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>NLP</span><span>Generative AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/SABARI2001/Chatbot" class="btn small-btn" target="_blank" rel="noopener">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <article class="bento-item" data-category="llm">
+                    <div class="bento-icon"><i class="fas fa-comments"></i></div>
+                    <span class="bento-cat">Conversational AI</span>
+                    <h3>AI Chatbot</h3>
+                    <p>NLP chatbot for interactive engagement.</p>
+                    <a href="https://github.com/SABARI2001/Chatbot" target="_blank" rel="noopener" class="bento-link">GitHub <i class="fas fa-arrow-right"></i></a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <p class="section-subtitle">Technologies I work with daily</p>
-
-            <div class="skill-chips">
-                <span>Python</span><span>SQL</span><span>PyTorch</span><span>TensorFlow</span>
-                <span>LangChain</span><span>RAG</span><span>LLM Integration</span><span>Prompt Engineering</span>
-                <span>NLP</span><span>Deep Learning</span><span>Generative AI</span><span>OCR</span>
-                <span>Django</span><span>Git</span><span>Pinecone</span><span>Vector Databases</span>
-                <span>Power BI</span><span>MySQL</span><span>Streamlit</span><span>MCP</span>
+            <div class="section-head">
+                <span class="section-index">04</span>
+                <div>
+                    <h2 class="section-title">Skills</h2>
+                    <p class="section-subtitle">Tools and techniques I ship with</p>
+                </div>
             </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages &amp; Frameworks</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SQL</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Django</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 75%"></div></div>
-                        </div>
-                    </div>
+            <div class="skill-marquee" aria-hidden="true">
+                <div class="marquee-track">
+                    <span>Python</span><span>SQL</span><span>PyTorch</span><span>TensorFlow</span><span>LangChain</span><span>RAG</span><span>LLM</span><span>NLP</span><span>Pinecone</span><span>Django</span><span>OCR</span><span>Power BI</span>
+                    <span>Python</span><span>SQL</span><span>PyTorch</span><span>TensorFlow</span><span>LangChain</span><span>RAG</span><span>LLM</span><span>NLP</span><span>Pinecone</span><span>Django</span><span>OCR</span><span>Power BI</span>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">LLM &amp; RAG</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 88%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Deep Learning</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 82%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">NLP</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Generative AI</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 85%"></div></div>
-                        </div>
-                    </div>
+            </div>
+            <div class="skill-columns">
+                <div class="skill-col">
+                    <h3>Languages &amp; Frameworks</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Django</li>
+                        <li>Streamlit</li>
+                        <li>Git</li>
+                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Data &amp; Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">MySQL</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 82%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Power BI</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Vector DBs (Pinecone)</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 80%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">LangChain</span>
-                            <div class="skill-bar"><div class="skill-progress" style="--skill-level: 82%"></div></div>
-                        </div>
-                    </div>
+                <div class="skill-col">
+                    <h3>AI &amp; Machine Learning</h3>
+                    <ul>
+                        <li>LLM Integration &amp; RAG</li>
+                        <li>Prompt Engineering</li>
+                        <li>Deep Learning (PyTorch / TF)</li>
+                        <li>NLP &amp; Generative AI</li>
+                        <li>OCR / Document AI</li>
+                    </ul>
+                </div>
+                <div class="skill-col">
+                    <h3>Data &amp; Infrastructure</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>Pinecone / Vector DBs</li>
+                        <li>LangChain</li>
+                        <li>Power BI</li>
+                        <li>Model Context Protocol</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resume Section -->
     <section id="resume" class="resume">
-        <div class="container">
-            <h2 class="section-title">Resume &amp; Achievements</h2>
-            <div class="resume-content">
-                <div class="resume-download">
-                    <div class="resume-icon"><i class="fas fa-file-lines"></i></div>
-                    <h3>Download My Resume</h3>
-                    <p>Full details on education, professional experience, projects, and technical skills.</p>
-                    <a href="files/Sabarinathan_Resume.pdf" class="btn primary-btn" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-                <div class="achievements">
-                    <h3>Key Achievements</h3>
-                    <div class="certification-items">
-                        <div class="certification-item">
-                            <div class="certification-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="certification-details">
-                                <h4>M.Sc Data Science Graduate</h4>
-                                <p>Coimbatore Institute of Technology — Class of 2025</p>
-                                <span class="certification-date">CGPA 8.3</span>
-                            </div>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon"><i class="fas fa-award"></i></div>
-                            <div class="certification-details">
-                                <h4>SQL (Basic) Certification</h4>
-                                <p>HackerRank</p>
-                                <span class="certification-date">Credential ID: 3A4E460560BC · Nov 2022</span>
-                            </div>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon"><i class="fas fa-code"></i></div>
-                            <div class="certification-details">
-                                <h4>Melinia Hackathon — Team Data Pirates</h4>
-                                <p>Computing Department, Coimbatore Institute of Technology</p>
-                                <span class="certification-date">1-Day coding marathon</span>
-                            </div>
-                        </div>
-                        <div class="certification-item">
-                            <div class="certification-icon"><i class="fas fa-microscope"></i></div>
-                            <div class="certification-details">
-                                <h4>COVID-19 Vaccination Data Analysis</h4>
-                                <p>2nd Virtual National Conference on Mathematical Modelling and Computation</p>
-                                <span class="certification-date">Research paper presentation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="container resume-band">
+            <div class="resume-cta">
+                <h2>Resume</h2>
+                <p>Full education, experience, projects, and skills in one PDF.</p>
+                <a href="files/Sabarinathan_Resume.pdf" class="btn primary-btn" download><i class="fas fa-download"></i> Download PDF</a>
+            </div>
+            <div class="resume-achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>
+                        <strong>M.Sc Data Science</strong>
+                        <span>CIT · Class of 2025 · CGPA 8.3</span>
+                    </li>
+                    <li>
+                        <strong>SQL (Basic) — HackerRank</strong>
+                        <span>Credential 3A4E460560BC · Nov 2022</span>
+                    </li>
+                    <li>
+                        <strong>Melinia Hackathon</strong>
+                        <span>Team Data Pirates · CIT Computing</span>
+                    </li>
+                    <li>
+                        <strong>National Conference Paper</strong>
+                        <span>COVID-19 Vaccination Data Analysis</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-subtitle">Open to collaborations, opportunities, and interesting conversations</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
+            <div class="contact-panel">
+                <div class="section-head light">
+                    <span class="section-index">05</span>
+                    <div>
+                        <h2 class="section-title">Let’s connect</h2>
+                        <p class="section-subtitle">Open to roles, collaborations, and interesting problems</p>
+                    </div>
+                </div>
+                <div class="contact-grid">
+                    <a class="contact-tile" href="mailto:sabarinathankarruppusamy2001@gmail.com">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h3>Email</h3>
-                            <p><a href="mailto:sabarinathankarruppusamy2001@gmail.com">sabarinathankarruppusamy2001@gmail.com</a></p>
+                            <span>Email</span>
+                            <strong>sabarinathankarruppusamy2001@gmail.com</strong>
                         </div>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <a class="contact-tile" href="tel:+916382586927">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h3>Phone</h3>
-                            <p><a href="tel:+916382586927">+91 63825 86927</a></p>
+                            <span>Phone</span>
+                            <strong>+91 63825 86927</strong>
                         </div>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+                    <div class="contact-tile static">
                         <i class="fas fa-location-dot"></i>
                         <div>
-                            <h3>Location</h3>
-                            <p>Coimbatore, Tamil Nadu, India</p>
+                            <span>Location</span>
+                            <strong>Coimbatore, Tamil Nadu</strong>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" class="social-link">
-                            <i class="fab fa-github"></i><span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank" rel="noopener" class="social-link">
-                            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
-                        </a>
-                        <a href="mailto:sabarinathankarruppusamy2001@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i><span>Email</span>
-                        </a>
-                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank" rel="noopener" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Sabarinathan Karuppusamy</h3>
-                    <p>Junior Software Engineer @ Prudent AI · AI/ML &amp; Data Engineering</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://github.com/SABARI2001" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sabarinathan-karuppusamy-1878561b9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:sabarinathankarruppusamy2001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Sabarinathan Karuppusamy. All Rights Reserved.</p>
-            </div>
+        <div class="container footer-bar">
+            <p>&copy; 2026 Sabarinathan Karuppusamy</p>
+            <p>Junior Software Engineer @ Prudent AI</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="js/particles-config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/interactive.js"></script>
+    <script src="js/particles-config.js?v=20260713b"></script>
+    <script src="js/main.js?v=20260713b"></script>
+    <script src="js/interactive.js?v=20260713b"></script>
 </body>
 </html>

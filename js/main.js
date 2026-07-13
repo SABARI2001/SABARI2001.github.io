@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.classList.toggle('active');
     });
 
-    const fadeElements = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .certification-item');
+    const fadeElements = document.querySelectorAll('.bento-item, .exp-row, .info-panel, .skill-col');
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => fadeObserver.observe(el));
 
     const projectFilters = document.querySelectorAll('.project-filter button');
-    const projects = document.querySelectorAll('.project-card');
+    const projects = document.querySelectorAll('.bento-item');
 
     projectFilters.forEach(filter => {
         filter.addEventListener('click', () => {
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             projects.forEach(project => {
                 const match = category === 'all' || project.getAttribute('data-category') === category;
-                project.style.display = match ? 'block' : 'none';
+                project.style.display = match ? '' : 'none';
                 if (match) project.classList.add('fade-in');
             });
         });
     });
 
-    document.querySelectorAll('.social-icons a, .contact-info a, .footer-social a').forEach(link => {
+    document.querySelectorAll('.social-icons a, .contact-tile, .social-link, .footer-bar a').forEach(link => {
         link.addEventListener('click', () => {
             const href = link.getAttribute('href') || '';
             const platform = href.includes('linkedin') ? 'LinkedIn'
@@ -117,16 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.querySelectorAll('.project-links a').forEach(link => {
+    document.querySelectorAll('.bento-link').forEach(link => {
         link.addEventListener('click', () => {
-            const title = link.closest('.project-card')?.querySelector('h3')?.textContent;
+            const title = link.closest('.bento-item')?.querySelector('h3')?.textContent;
             if (typeof gtag === 'function' && title) {
                 gtag('event', 'project_click', { project_title: title });
             }
         });
     });
 
-    document.querySelector('.resume-download a')?.addEventListener('click', () => {
+    document.querySelector('.resume-cta a')?.addEventListener('click', () => {
         if (typeof gtag === 'function') {
             gtag('event', 'resume_download');
         }
