@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.classList.toggle('active');
     });
 
-    const fadeElements = document.querySelectorAll('.bento-item, .exp-row, .info-panel, .skill-col');
+    const fadeElements = document.querySelectorAll('.section-head, .lead-text, .bento-item, .exp-row, .info-panel, .skill-col, .resume-cta, .resume-achievements, .contact-tile');
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
