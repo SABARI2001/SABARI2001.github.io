@@ -360,6 +360,10 @@ nav {
     color: #fff;
     border-color: transparent;
 }
+[data-theme="dark"] .social-icons a:hover {
+    background: var(--teal);
+    color: #062925;
+}
 
 .hero-aside { display: grid; gap: 1rem; }
 .hero-portrait {
@@ -782,7 +786,7 @@ section { padding: 6rem 0; position: relative; }
 .bento-link:hover i { transform: translateX(4px); }
 
 /* ========== Skills ========== */
-.skills { background: var(--ink); color: #e8f1f0; overflow: hidden; }
+.skills { background: var(--ink-soft); color: #e8f1f0; overflow: hidden; }
 .skills .section-title { color: #fff; }
 .skills .section-subtitle { color: rgba(232, 241, 240, 0.7); }
 .skills .section-index { color: rgba(45, 212, 191, 0.35); }
@@ -849,7 +853,7 @@ section { padding: 6rem 0; position: relative; }
 .resume-cta {
     background:
         radial-gradient(circle at 20% 20%, rgba(15, 156, 138, 0.2), transparent 45%),
-        var(--ink);
+        var(--ink-soft);
     color: #fff;
     border-radius: 28px;
     padding: 2.4rem;
