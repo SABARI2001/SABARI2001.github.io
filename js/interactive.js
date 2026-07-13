@@ -39,16 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typewriterElement) {
         new TypeWriter(typewriterElement);
     }
-
-    const skillBars = document.querySelectorAll('.skill-progress');
-    const skillObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = 'fillSkillBar 1.2s ease forwards';
-                skillObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-
-    skillBars.forEach(bar => skillObserver.observe(bar));
 });
